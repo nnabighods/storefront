@@ -3,7 +3,7 @@ import PageTitle from "../components/PageTitle/PageTitle";
 import ProductCard from "../components/ProductCard/ProductCard";
 
 export default function Home(props) {
-  const products = props.products;
+  const products = props.products.slice(0,3);
 
   return (
     <>
@@ -28,6 +28,7 @@ export async function getStaticProps(){
   return {
       props:{
           products
-      }
+      },
+      revalidate: 60,
   }
 }
