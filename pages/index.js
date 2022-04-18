@@ -6,7 +6,7 @@ import PageTitle from "../components/PageTitle/PageTitle";
 import ProductCard from "../components/ProductCard/ProductCard";
 
 export default function Home(props) {
-  const products = props.products.slice(0,3);
+  const products = props.products/* .slice(0,3) */;
 
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
@@ -19,7 +19,7 @@ export default function Home(props) {
       <title>Seeder</title>
     </Head>
     <PageTitle title="Seeder" tagline="For all your seed needs!"/>
-    <main>
+    <main className="product-main">
       {  products.map(product=> <ProductCard  key={product.uid} product={product}/>)}
     </main>
     </>

@@ -5,14 +5,15 @@ import {productCard, price, name, description} from './styles.module.scss'
 function ProductCard ({children, product, ...props})  {
   const {productName, productPrice, productDescription, imageUrl, uid}= {...product}
   return (
-    <aside className={productCard}>
+    <div className={productCard}>
     <header>
       <Image
         src={imageUrl}
         alt={productName}
-        width={400}
-        height={500}
+        width="100%"
+        height="100%"
         quality={50}
+        layout="responsive"
       />
     </header>
     <h2 className={name}>{productName}</h2>
@@ -24,7 +25,7 @@ function ProductCard ({children, product, ...props})  {
         <button type="submit">Buy Now</button>
       </form>
     </footer>
-    </aside>
+    </div>
   )
 }
 
